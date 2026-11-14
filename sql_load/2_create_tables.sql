@@ -49,6 +49,7 @@ CREATE TABLE public.skills_job_dim
 );
 
 -- Set ownership of the tables to the postgres user
+-- suggestiion : Grant access to schema
 ALTER TABLE public.company_dim OWNER to postgres;
 ALTER TABLE public.skills_dim OWNER to postgres;
 ALTER TABLE public.job_postings_fact OWNER to postgres;
@@ -58,3 +59,4 @@ ALTER TABLE public.skills_job_dim OWNER to postgres;
 CREATE INDEX idx_company_id ON public.job_postings_fact (company_id);
 CREATE INDEX idx_skill_id ON public.skills_job_dim (skill_id);
 CREATE INDEX idx_job_id ON public.skills_job_dim (job_id);
+
